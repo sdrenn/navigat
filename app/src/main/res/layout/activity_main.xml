@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="intelligence.dummy.dip.SensorFusionActivity"
+    android:weightSum="1">
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="284dp">
+        <com.androidplot.xy.XYPlot
+            style="@style/APDefacto.Dark"
+            android:id="@+id/plot"
+            android:layout_width="fill_parent"
+            android:layout_height="284dp"
+            ap:label="Azimuth"
+            ap:rangeLabel="range"
+            ap:domainLabel="domain"
+            android:layout_weight="0.39"
+            android:visibility="invisible" />
+        <intelligence.dummy.dip.DrawView
+            android:layout_width="fill_parent"
+            android:layout_height="284dp"
+            android:visibility="visible"
+            android:id="@+id/draw"/>
+    </FrameLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:orientation="horizontal">
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/radioGroup1">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="accMagOrientation"
+                android:id="@+id/radio0"
+                android:checked="true" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="gyroOrientation"
+                android:id="@+id/radio1"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fusedOrientation"
+                android:id="@+id/radio2"
+                android:checked="false" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/radioGroup2">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Azimuth"
+                android:id="@+id/radio3"
+                android:checked="true" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pitch"
+                android:id="@+id/radio4"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Roll"
+                android:id="@+id/radio5"
+                android:checked="false" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="#15d104">
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="switch"
+            android:id="@+id/switch1"
+            android:checked="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grant permission"
+            android:id="@+id/button2"
+            android:onClick="onClick" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="reset"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onClick" />
+</LinearLayout>
